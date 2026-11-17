@@ -13,18 +13,18 @@ export default function CartPage() {
 
   return (
     <>
-    <PageBanner eyebrow="Cart" title={<>Your <span className="text-gold">cart</span></>} />
-    <section className="mx-auto max-w-5xl px-5 py-10 md:py-14">
+    <PageBanner compact eyebrow="Cart" title={<>Your <span className="text-gold">cart</span></>} />
+    <section className="mx-auto max-w-5xl px-5 py-6 md:py-14">
 
       {!cart.ready ? null : cart.quantity === 0 ? (
-        <div className="rounded-[10px] bg-sand p-12 text-center">
+        <div className="rounded-[10px] bg-sand px-6 py-10 text-center md:p-12">
           <p className="text-ink/70">Your cart is empty.</p>
           <Link href="/shop" className="btn-primary mt-6">Shop the hair oil</Link>
         </div>
       ) : (
-        <div className="grid md:grid-cols-[1fr_340px] gap-8 items-start">
-          <div className="rounded-[10px] bg-sand p-6 flex gap-5">
-            <div className="relative h-36 w-24 shrink-0 overflow-hidden rounded-xl bg-cream">
+        <div className="grid items-start gap-5 md:grid-cols-[1fr_340px] md:gap-8">
+          <div className="flex gap-4 rounded-[10px] bg-sand p-4 md:gap-5 md:p-6">
+            <div className="relative h-32 w-20 shrink-0 md:h-36 md:w-24 overflow-hidden rounded-xl bg-cream">
               <Image src={product.cutout} alt="" fill sizes="96px" className="object-contain p-1.5" />
             </div>
             <div className="flex-1">
@@ -51,7 +51,7 @@ export default function CartPage() {
 function Summary() {
   const cart = useCart();
   return (
-    <div className="rounded-[10px] bg-plum-deep p-6 space-y-3 text-sm text-cream md:sticky md:top-24">
+    <div className="space-y-3 rounded-[10px] bg-plum-deep p-5 text-sm md:p-6 text-cream md:sticky md:top-24">
       <div className="flex justify-between text-cream/75"><span>Subtotal</span><span>{formatPKR(cart.subtotal)}</span></div>
       <div className="flex justify-between text-cream/75"><span>Shipping</span><span>{cart.shippingFee ? formatPKR(cart.shippingFee) : "Free"}</span></div>
       <div className="flex justify-between text-base font-semibold pt-3 border-t border-cream/15"><span>Total</span><span>{formatPKR(cart.total)}</span></div>

@@ -24,7 +24,7 @@ export default function CheckoutPage() {
   if (cart.quantity === 0) {
     return (
       <>
-        <PageBanner eyebrow="Checkout" title={<>Check<span className="text-gold">out</span></>} />
+        <PageBanner compact eyebrow="Checkout" title={<>Check<span className="text-gold">out</span></>} />
         <section className="mx-auto max-w-xl px-5 py-16 text-center">
           <p className="text-ink/70">Your cart is empty.</p>
           <Link href="/shop" className="btn-primary mt-8">Shop the hair oil</Link>
@@ -90,7 +90,7 @@ export default function CheckoutPage() {
 
   return (
     <>
-      <PageBanner eyebrow="Checkout" title={<>Check<span className="text-gold">out</span></>}>
+      <PageBanner compact eyebrow="Checkout" title={<>Check<span className="text-gold">out</span></>}>
         Cash on Delivery across Pakistan — we&apos;ll confirm by call or WhatsApp before dispatch.
       </PageBanner>
 
@@ -118,7 +118,7 @@ export default function CheckoutPage() {
       <MobileSummary />
 
       <section className="bg-cream">
-        <div className="mx-auto max-w-6xl px-5 py-10 md:py-14">
+        <div className="mx-auto max-w-6xl px-5 py-5 md:py-14">
           <form onSubmit={onSubmit} noValidate className="grid items-start gap-8 lg:grid-cols-[1fr_390px]">
             <div className="space-y-6">
               <Card step="1" title="Contact" hint="So we can confirm your order.">
@@ -250,16 +250,16 @@ function Check() {
 
 function Card({ step, title, hint, children }: { step: string; title: string; hint: string; children: React.ReactNode }) {
   return (
-    <fieldset className="rounded-2xl border border-plum/15 bg-white p-6 shadow-[0_24px_50px_-40px_rgba(58,21,52,0.6)] md:p-8">
+    <fieldset className="rounded-2xl border border-plum/15 bg-white p-5 shadow-[0_24px_50px_-40px_rgba(58,21,52,0.6)] md:p-8">
       <legend className="sr-only">{title}</legend>
-      <div className="mb-6 flex items-center gap-4">
+      <div className="mb-4 flex items-center gap-3 md:mb-6 md:gap-4">
         <span className="grid h-9 w-9 shrink-0 place-items-center rounded-full bg-plum font-display text-sm font-bold text-cream">{step}</span>
         <div>
           <h2 className="font-display text-xl font-bold leading-tight text-plum-deep">{title}</h2>
           <p className="text-sm text-ink/55">{hint}</p>
         </div>
       </div>
-      <div className="space-y-5">{children}</div>
+      <div className="space-y-4 md:space-y-5">{children}</div>
     </fieldset>
   );
 }
