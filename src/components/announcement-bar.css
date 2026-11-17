@@ -1,0 +1,84 @@
+/* Announcement bar styles (from the vividsites.app component the client chose) */
+.vs-announcement-bar {
+  --vs-announcement-bar-bg: #0e0e0d;
+  --vs-announcement-bar-ink: #f3f2ec;
+  --vs-announcement-bar-accent: #d4ff3a;
+  --vs-announcement-bar-size: .8125rem;
+  --vs-announcement-bar-speed: 56;
+  --vs-announcement-bar-line: rgba(255,255,255,.08);
+  --vs-announcement-bar-font: inherit;
+
+  position: relative; overflow: hidden; width: 100%;
+  font-family: var(--vs-announcement-bar-font); font-size: var(--vs-announcement-bar-size); line-height: 1;
+  color: var(--vs-announcement-bar-ink); background: var(--vs-announcement-bar-bg);
+  box-shadow: inset 0 -1px 0 var(--vs-announcement-bar-line);
+}
+.vs-announcement-bar, .vs-announcement-bar * { box-sizing: border-box; }
+.vs-announcement-bar[hidden] { display: none; }
+.vs-announcement-bar-inner { position: relative; display: flex; align-items: center; height: calc(var(--vs-announcement-bar-size) * 2.5); will-change: transform, opacity; }
+.vs-announcement-bar-viewport { position: relative; flex: 1; min-width: 0; height: 100%; overflow: hidden; }
+.vs-announcement-bar ul { margin: 0; padding: 0; list-style: none; }
+.vs-announcement-bar li { white-space: nowrap; }
+.vs-announcement-bar a { color: inherit; text-decoration: none; border-radius: 4px; outline: none; }
+.vs-announcement-bar a:focus-visible { box-shadow: 0 0 0 2px var(--vs-announcement-bar-accent); }
+.vs-announcement-bar-tag {
+  display: inline-flex; align-items: center; height: 1.85em; padding: 0 .65em; margin-right: .8em; border-radius: 999px; vertical-align: middle;
+  font-size: .85em; font-weight: 600; letter-spacing: .02em; color: var(--vs-announcement-bar-bg); background: var(--vs-announcement-bar-accent);
+}
+.vs-announcement-bar-go { display: inline-block; margin-left: .45em; transition: transform .45s cubic-bezier(.3,1.5,.5,1); }
+.vs-announcement-bar a:hover .vs-announcement-bar-go, .vs-announcement-bar a:focus-visible .vs-announcement-bar-go { transform: translateX(3px); }
+/* optional pinned label at the start of the bar, with a live dot */
+.vs-announcement-bar-lead {
+  position: relative; z-index: 1; display: flex; align-items: center; gap: .7em; flex: none; height: 100%; padding: 0 1.1em 0 1.25em;
+  font-weight: 700; letter-spacing: .06em; text-transform: uppercase; font-size: .85em;
+  box-shadow: 1px 0 0 var(--vs-announcement-bar-line);
+}
+.vs-announcement-bar-lead::before { content: ""; width: .55em; height: .55em; border-radius: 50%; background: var(--vs-announcement-bar-accent); }
+.vs-announcement-bar-lead::after {
+  content: ""; position: absolute; left: 1.25em; top: 50%; width: .55em; height: .55em; margin-top: -.275em; border-radius: 50%;
+  background: var(--vs-announcement-bar-accent); animation: vs-announcement-bar-pulse 1.8s cubic-bezier(.16,1,.3,1) infinite;
+}
+@keyframes vs-announcement-bar-pulse { 0% { transform: scale(1); opacity: .6; } 70%, 100% { transform: scale(3.2); opacity: 0; } }
+/* ── marquee ── */
+.vs-announcement-bar[data-mode="marquee"] .vs-announcement-bar-viewport {
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 4%, #000 92%, transparent); mask-image: linear-gradient(90deg, transparent, #000 4%, #000 92%, transparent);
+}
+.vs-announcement-bar[data-mode="marquee"] ul { display: flex; align-items: center; width: max-content; height: 100%; will-change: transform; }
+.vs-announcement-bar[data-mode="marquee"] li { display: flex; align-items: center; height: 100%; }
+.vs-announcement-bar[data-mode="marquee"] li::after { /* a four-point spark between messages */
+  content: ""; width: .8em; height: .8em; margin: 0 1.6em; flex: none; background: var(--vs-announcement-bar-accent);
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 10'%3E%3Cpath d='M5 0C5.4 3.3 6.7 4.6 10 5 6.7 5.4 5.4 6.7 5 10 4.6 6.7 3.3 5.4 0 5 3.3 4.6 4.6 3.3 5 0z'/%3E%3C/svg%3E") center / contain no-repeat;
+          mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 10'%3E%3Cpath d='M5 0C5.4 3.3 6.7 4.6 10 5 6.7 5.4 5.4 6.7 5 10 4.6 6.7 3.3 5.4 0 5 3.3 4.6 4.6 3.3 5 0z'/%3E%3C/svg%3E") center / contain no-repeat;
+}
+.vs-announcement-bar[data-mode="marquee"] a { opacity: .78; transition: opacity .3s cubic-bezier(.2,0,0,1); }
+.vs-announcement-bar[data-mode="marquee"] a:hover, .vs-announcement-bar[data-mode="marquee"] a:focus-visible { opacity: 1; }
+/* ── rotate ── */
+.vs-announcement-bar[data-mode="rotate"] ul { position: relative; height: 100%; }
+.vs-announcement-bar[data-mode="rotate"] li {
+  position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; padding: 0 .5em;
+  opacity: 0; visibility: hidden; will-change: transform, opacity, filter;
+}
+.vs-announcement-bar[data-mode="rotate"] li.is-on { opacity: 1; visibility: visible; }
+.vs-announcement-bar[data-mode="rotate"] li > a, .vs-announcement-bar[data-mode="rotate"] li > span { overflow: hidden; text-overflow: ellipsis; }
+.vs-announcement-bar-nav { display: flex; gap: .15em; padding-left: .6em; }
+.vs-announcement-bar-nav button, .vs-announcement-bar-close {
+  display: grid; place-items: center; flex: none; width: 2.4em; height: 2.4em; padding: 0; border: 0; border-radius: 999px;
+  background: transparent; color: inherit; cursor: pointer; opacity: .6; outline: none; -webkit-tap-highlight-color: transparent;
+  transition: opacity .2s cubic-bezier(.2,0,0,1), background-color .2s, transform .4s cubic-bezier(.3,1.5,.5,1);
+}
+.vs-announcement-bar-nav button:hover, .vs-announcement-bar-close:hover { opacity: 1; background: color-mix(in srgb, currentColor 10%, transparent); }
+.vs-announcement-bar-nav button:active, .vs-announcement-bar-close:active { transform: scale(.88); transition-duration: .1s; }
+.vs-announcement-bar-nav button:focus-visible, .vs-announcement-bar-close:focus-visible { opacity: 1; box-shadow: 0 0 0 2px var(--vs-announcement-bar-accent); }
+.vs-announcement-bar-nav svg, .vs-announcement-bar-close svg { width: 1.1em; height: 1.1em; }
+.vs-announcement-bar-close { margin: 0 .5em 0 .3em; }
+.vs-announcement-bar-progress { position: absolute; left: 0; right: 0; bottom: 0; height: 3px; pointer-events: none; z-index: 2; }
+.vs-announcement-bar-progress i { display: block; height: 100%; width: 100%; transform-origin: 0 50%; transform: scaleX(0); background: var(--vs-announcement-bar-progress, #EFDDBC); opacity: 1; }
+@media (max-width: 600px) {
+  .vs-announcement-bar-nav { display: none; }
+  .vs-announcement-bar[data-mode="rotate"] li { justify-content: flex-start; padding-left: 1em; }
+}
+@media (max-width: 600px) { .vs-announcement-bar-lead { padding: 0 .8em 0 1em; } .vs-announcement-bar-lead::after { left: 1em; } }
+@media (prefers-reduced-motion: reduce) {
+  .vs-announcement-bar-lead::after { animation: none; opacity: 0; }
+  .vs-announcement-bar[data-mode="marquee"] ul { transform: none !important; }
+}
