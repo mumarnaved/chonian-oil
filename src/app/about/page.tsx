@@ -27,20 +27,20 @@ export default function AboutPage() {
       </PageBanner>
 
       {/* Story */}
-      <section className="mx-auto grid max-w-6xl items-center gap-10 px-5 py-16 md:grid-cols-2 md:gap-16 md:py-24">
+      <section className="mx-auto grid max-w-6xl items-center gap-6 px-5 py-10 md:grid-cols-2 md:gap-16 md:py-24">
         <div>
           <p className="eyebrow">Our story</p>
-          <h2 className="section-title mt-4">One oil, two ways to enjoy it.</h2>
-          <p className="mt-5 text-lg leading-relaxed text-ink/75">
+          <h2 className="section-title mt-3 md:mt-4">One oil, two ways to enjoy it.</h2>
+          <p className="mt-4 text-base leading-relaxed text-ink/75 md:mt-5 md:text-lg">
             It began in the kitchen. The oil we use to make Chonions onion crisps is the oil we have always made at
             home — pure mustard oil, infused with organic onion.
           </p>
-          <p className="mt-4 leading-relaxed text-ink/75">
+          <p className="mt-3 text-[15px] leading-relaxed text-ink/75 md:mt-4 md:text-base">
             Onion and mustard have nourished hair in Pakistani homes for generations. So we bottled that very same oil
             for your hair and scalp, and gave it a name of its own: Onion &amp; Mustard, the sister company of Chonions.
           </p>
         </div>
-        <div className="relative aspect-[4/3] overflow-hidden rounded-[16px] border-[1.5px] border-plum bg-sand">
+        <div className="relative aspect-[16/10] overflow-hidden rounded-[16px] md:aspect-[4/3] border-[1.5px] border-plum bg-sand">
           <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: "url(/videos/oil-food-poster.jpg)" }} aria-hidden />
           <LoopVideo name="oil-food" className="absolute inset-0 h-full w-full object-cover" />
         </div>
@@ -48,20 +48,20 @@ export default function AboutPage() {
 
       {/* Same oil */}
       <section className="bg-plum-deep text-cream">
-        <div className="mx-auto grid max-w-6xl items-center gap-10 px-5 py-16 md:grid-cols-[320px_1fr] md:gap-16 md:py-20">
-          <div className="mx-auto w-56 md:w-full">
+        <div className="mx-auto grid max-w-6xl items-center gap-5 px-5 py-10 md:grid-cols-[320px_1fr] md:gap-16 md:py-20">
+          <div className="mx-auto w-36 md:w-full">
             <Image src="/images/chonions-logo-full.png" alt="Chonions" width={634} height={698} className="h-auto w-full" />
           </div>
           <div>
             <p className="eyebrow !text-gold">Sister company by Chonions</p>
-            <h2 className="mt-4 font-display text-3xl font-bold leading-tight tracking-tight sm:text-4xl">
+            <h2 className="mt-3 font-display text-[26px] font-bold leading-tight tracking-tight sm:text-4xl md:mt-4 md:text-3xl">
               If we trust it in our food, you can trust it on your hair.
             </h2>
-            <p className="mt-5 max-w-2xl leading-relaxed text-cream/80">
+            <p className="mt-4 max-w-2xl text-[15px] leading-relaxed text-cream/80 md:mt-5 md:text-base">
               Chonions crisps are made with our homemade onion and mustard oil. This bottle holds exactly that same
               oil — nothing swapped, nothing diluted.
             </p>
-            <a href={chonionsSiteUrl} className="mt-7 inline-flex items-center gap-2 font-semibold text-gold underline underline-offset-4 hover:text-cream">
+            <a href={chonionsSiteUrl} className="mt-5 inline-flex items-center gap-2 font-semibold md:mt-7 text-gold underline underline-offset-4 hover:text-cream">
               Discover Chonions onion crisps ↗
             </a>
           </div>
@@ -69,12 +69,12 @@ export default function AboutPage() {
       </section>
 
       {/* Process */}
-      <section className="mx-auto max-w-6xl px-5 py-16 md:py-24">
+      <section className="mx-auto max-w-6xl px-5 py-10 md:py-24">
         <p className="eyebrow">How it&apos;s made</p>
         <h2 className="section-title mt-4 max-w-2xl">Homemade, start to finish.</h2>
-        <ol className="mt-10 grid gap-x-10 border-b border-plum/20 md:grid-cols-2">
+        <ol className="mt-6 grid md:mt-10 gap-x-10 border-b border-plum/20 md:grid-cols-2">
           {journey.map((j) => (
-            <li key={j.step} className="grid grid-cols-[4.25rem_1fr] items-start gap-x-3 border-t border-plum/20 py-6 sm:grid-cols-[5rem_1fr]">
+            <li key={j.step} className="grid grid-cols-[4.25rem_1fr] items-start gap-x-3 border-t border-plum/20 py-4 sm:grid-cols-[5rem_1fr] md:py-6">
               <span className="font-display text-4xl font-medium leading-none tabular-nums text-gold-deep sm:text-5xl">{j.step}</span>
               <div>
                 <h3 className="font-display text-xl font-semibold leading-none text-plum sm:pt-1.5">{j.title}</h3>
