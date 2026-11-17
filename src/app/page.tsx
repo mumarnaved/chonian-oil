@@ -324,7 +324,7 @@ export default function Home() {
       {/* ───────── 8 · CLOSING STATEMENT: mustard plants grow up as you scroll ───────── */}
       <section className="relative overflow-hidden pt-14 md:pt-32">
         <span
-          className="pointer-events-none select-none absolute inset-x-0 text-center font-display font-bold uppercase leading-none tracking-tight text-gold/15 max-md:bottom-[calc(max(46vh,320px)-0.5rem)] max-md:text-[15vw] md:top-[38%] md:text-[19vw]"
+          className="pointer-events-none select-none absolute inset-x-0 text-center font-display font-bold uppercase leading-none tracking-tight text-gold/15 max-md:bottom-[calc(max(46vh,320px)-1.75rem)] max-md:text-[20.5vw] md:top-[38%] md:text-[19vw]"
           aria-hidden
         >
           Mustard
@@ -338,7 +338,7 @@ export default function Home() {
           </p>
           <SimpleAddButton label={`Add to cart · ${formatPKR(product.price)}`} className="btn-primary mt-8" />
         </div>
-        <MustardField className="mt-12 h-[46vh] min-h-[320px] max-h-[560px] md:mt-12 md:h-[52vh]">
+        <MustardField className="mt-16 h-[46vh] min-h-[320px] max-h-[560px] md:mt-12 md:h-[52vh]">
           <BottleSlot rotate={0} glow="none" anim="swing" className="absolute left-1/2 bottom-4 -translate-x-1/2 h-[88%] w-40" />
         </MustardField>
       </section>
