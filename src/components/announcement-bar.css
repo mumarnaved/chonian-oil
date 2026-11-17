@@ -75,7 +75,9 @@
 .vs-announcement-bar-progress i { display: block; height: 100%; width: 100%; transform-origin: 0 50%; transform: scaleX(0); background: var(--vs-announcement-bar-progress, #EFDDBC); opacity: 1; }
 @media (max-width: 600px) {
   .vs-announcement-bar-nav { display: none; }
-  .vs-announcement-bar[data-mode="rotate"] li { justify-content: flex-start; padding-left: 1em; }
+  .vs-announcement-bar[data-mode="rotate"] li { justify-content: center; padding: 0 .5em; text-align: center; }
+  /* balance the close button so the text sits in the true centre of the bar */
+  .vs-announcement-bar-viewport { padding-left: 3.2em; }
 }
 @media (max-width: 600px) { .vs-announcement-bar-lead { padding: 0 .8em 0 1em; } .vs-announcement-bar-lead::after { left: 1em; } }
 @media (prefers-reduced-motion: reduce) {
