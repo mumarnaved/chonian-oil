@@ -60,18 +60,18 @@ export default function ShopPage() {
 
       {/* Why */}
       <section className="bg-sand">
-        <div className="mx-auto max-w-6xl px-5 py-14 md:py-20">
+        <div className="mx-auto max-w-6xl px-5 py-10 md:py-20">
           <p className="eyebrow text-center">Why Onion &amp; Mustard</p>
           <h2 className="section-title mt-3 text-center">Simple, honest, homemade.</h2>
-          <div className="mt-10 grid gap-x-8 gap-y-10 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="mt-8 grid grid-cols-2 gap-x-4 gap-y-8 md:mt-10 md:gap-x-8 md:gap-y-10 lg:grid-cols-4">
             {why.map((w) => (
               <div key={w.title} className="text-center">
-                <span className="mx-auto grid h-20 w-20 place-items-center rounded-full bg-cream ring-1 ring-plum/10">
+                <span className="mx-auto grid h-16 w-16 place-items-center rounded-full bg-cream ring-1 ring-plum/10 md:h-20 md:w-20">
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img src={w.icon} alt="" width={44} height={44} className="h-11 w-11" />
                 </span>
-                <h3 className="mt-5 font-display text-lg font-bold text-plum">{w.title}</h3>
-                <p className="mx-auto mt-1.5 max-w-[15rem] text-sm leading-relaxed text-ink/65">{w.text}</p>
+                <h3 className="mt-3 font-display text-base font-bold leading-tight text-plum md:mt-5 md:text-lg">{w.title}</h3>
+                <p className="mx-auto mt-1.5 max-w-[15rem] text-[13px] leading-relaxed text-ink/65 md:text-sm">{w.text}</p>
               </div>
             ))}
           </div>
@@ -80,8 +80,8 @@ export default function ShopPage() {
 
       {/* Spotlight */}
       <section className="bg-plum-deep text-cream">
-        <div className="mx-auto grid max-w-6xl items-center gap-10 px-5 py-14 md:grid-cols-2 md:gap-16 md:py-20">
-          <div className="relative mx-auto aspect-[4/5] w-full max-w-md overflow-hidden rounded-[14px]">
+        <div className="mx-auto grid max-w-6xl items-center gap-6 px-5 py-10 md:grid-cols-2 md:gap-16 md:py-20">
+          <div className="relative mx-auto aspect-[16/10] w-full max-w-md overflow-hidden rounded-[14px] md:aspect-[4/5]">
             <BottleShot alt="Organic Onions & Mustard Hair Oil" sizes="(min-width:768px) 40vw, 90vw" />
           </div>
           <div>
@@ -89,7 +89,7 @@ export default function ShopPage() {
             <h2 className="mt-3 font-display text-3xl font-bold leading-tight tracking-tight sm:text-4xl">
               Mustard oil, infused with organic onion.
             </h2>
-            <ul className="mt-6 space-y-3">
+            <ul className="mt-4 space-y-2 md:mt-6 md:space-y-3">
               {inside.map((i) => (
                 <li key={i} className="flex items-start gap-3 text-cream/85">
                   <svg className="mt-1 h-4 w-4 shrink-0 text-gold" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden><path d="m5 12 5 5 9-10" /></svg>
@@ -97,12 +97,12 @@ export default function ShopPage() {
                 </li>
               ))}
             </ul>
-            <p className="mt-8 flex items-baseline gap-3">
+            <p className="mt-5 flex items-baseline gap-3 md:mt-8">
               <span className="font-display text-3xl font-bold text-gold">{formatPKR(product.price)}</span>
               {product.compareAtPrice ? <span className="text-cream/50 line-through">{formatPKR(product.compareAtPrice)}</span> : null}
               <span className="text-sm text-cream/60">/ {product.size}</span>
             </p>
-            <div className="mt-5 flex flex-wrap items-center gap-4">
+            <div className="mt-4 flex flex-wrap items-center gap-3 md:mt-5 md:gap-4">
               <SimpleAddButton label="Add to cart" className="inline-flex h-12 items-center justify-center rounded-[10px] bg-gold px-8 font-display text-[13px] font-bold uppercase tracking-[0.14em] text-plum-deep transition hover:bg-[#f0bb4d]" />
               <span className="text-sm text-cream/65">Cash on Delivery · free shipping over {formatPKR(shipping.freeAbove)}</span>
             </div>
@@ -112,7 +112,7 @@ export default function ShopPage() {
 
       {/* Delivery */}
       <section className="border-b border-plum/10 bg-cream">
-        <div className="mx-auto grid max-w-6xl gap-8 px-5 py-12 md:grid-cols-3">
+        <div className="mx-auto grid max-w-6xl gap-6 px-5 py-10 md:grid-cols-3 md:gap-8 md:py-12">
           {[
             { icon: "/images/cod-truck.png", title: "Cash on Delivery", text: "Pay in cash when your order arrives." },
             { icon: "/images/fast-clock.png", title: "Delivery across Pakistan", text: `${formatPKR(shipping.flatFee)} flat — free over ${formatPKR(shipping.freeAbove)}.` },

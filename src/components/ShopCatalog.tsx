@@ -33,12 +33,12 @@ export function ShopCatalog() {
 
           {showCrisps ? (
           <div className="relative mx-auto flex w-full max-w-[396px] flex-col gap-4 md:h-[clamp(430px,calc(100svh-335px),580px)] md:w-[396px] md:before:absolute md:before:-bottom-3 md:before:-left-4 md:before:-top-3 md:before:w-[1.5px] md:before:bg-plum/70 md:before:content-['']">
-            <a href={chonionsSiteUrl} className="group flex aspect-[396/330] w-full flex-col overflow-hidden rounded-[16px] border-[1.5px] border-plum bg-plum-deep md:aspect-auto md:h-[60%] md:shrink-0">
-              <span className="relative block flex-1 overflow-hidden bg-sand">
-                <span className="absolute left-3 top-3 z-10 rounded-[5px] bg-gold px-2.5 py-1 font-display text-[10.5px] font-semibold uppercase tracking-[0.12em] text-plum-deep">Sister brand</span>
+            <a href={chonionsSiteUrl} className="group flex w-full flex-row overflow-hidden rounded-[16px] border-[1.5px] border-plum bg-plum-deep md:aspect-auto md:h-[60%] md:shrink-0 md:flex-col">
+              <span className="relative block w-[40%] shrink-0 overflow-hidden bg-sand md:w-auto md:flex-1">
+                <span className="absolute left-3 top-3 z-10 hidden rounded-[5px] md:block bg-gold px-2.5 py-1 font-display text-[10.5px] font-semibold uppercase tracking-[0.12em] text-plum-deep">Sister brand</span>
                 <Image src="/images/chonions-pouch.jpg" alt="Chonions onion crisps pouch" fill sizes="396px" className="object-cover transition duration-700 group-hover:scale-[1.04]" />
               </span>
-              <span className="flex items-center justify-between gap-3 px-4 py-3 text-cream">
+              <span className="flex flex-1 flex-col justify-center gap-3 px-4 py-4 text-cream md:flex-none md:flex-row md:items-center md:justify-between md:py-3">
                 <span>
                   <span className="block font-display text-[15px] font-bold leading-tight">Chonions onion crisps</span>
                   <span className="block text-[12px] text-cream/70">Made with the same oil</span>
@@ -47,7 +47,7 @@ export function ShopCatalog() {
               </span>
             </a>
 
-            <div className="flex flex-1 flex-col justify-center rounded-[16px] border-[1.5px] border-plum bg-sand/60 px-5 py-4">
+            <div className="hidden flex-1 flex-col justify-center rounded-[16px] md:flex border-[1.5px] border-plum bg-sand/60 px-5 py-4">
               <p className="font-display text-[10.5px] font-semibold uppercase tracking-[0.16em] text-gold-deep">One oil, two ways</p>
               <p className="mt-1.5 text-[13px] leading-relaxed text-ink/80">
                 The mustard oil in every Chonions crisp is the same one bottled here for your hair, from mustard seed till mustard oil. Homemade and fully natural.
