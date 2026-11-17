@@ -179,3 +179,6 @@ summary {
 .acc-icon {
   transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1), background-color 0.3s ease, color 0.3s ease !important;
 }
+
+/* Decorative glows and tilted bottles may poke past the viewport; never let that create a sideways scroll. */
+html, body { overflow-x: clip; }

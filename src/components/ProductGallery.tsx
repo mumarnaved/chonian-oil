@@ -16,7 +16,7 @@ export function ProductGallery() {
   const s = slides[i];
   return (
     <div className="lg:sticky lg:top-28">
-      <div className={`relative aspect-square overflow-hidden rounded-[16px] ${s.bg}`}>
+      <div className={`relative aspect-[4/3] overflow-hidden rounded-[16px] lg:aspect-square ${s.bg}`}>
         {s.studio ? (
           <BottleShot key={s.src} alt={s.alt} sizes="(min-width:1024px) 48vw, 94vw" priority />
         ) : (

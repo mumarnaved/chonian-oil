@@ -112,7 +112,7 @@ export default function Home() {
 
       {/* ───────── 2 · SAME OIL AS CHONIONS (bottle joins the pack) ───────── */}
       <section id="story" className="bg-plum text-cream leaf-pattern">
-        <div className="mx-auto max-w-6xl px-5 py-20 md:py-32 grid md:grid-cols-2 gap-12 md:gap-16 items-center">
+        <div className="mx-auto max-w-6xl px-5 py-12 md:py-32 grid md:grid-cols-2 gap-8 md:gap-16 items-center">
           <div className="relative">
             <div className="relative aspect-[16/11] overflow-hidden rounded-[3px] shadow-[0_40px_70px_-30px_rgba(0,0,0,0.7)] md:mr-16">
               <Image
@@ -125,23 +125,23 @@ export default function Home() {
             </div>
             <Seal className="absolute -top-10 -left-3 md:-left-10 h-28 w-28 md:h-36 md:w-36" />
             {/* the bottle lands here, standing beside the Chonions pack */}
-            <BottleSlot rotate={8} className="absolute -right-2 md:-right-4 -bottom-10 h-[300px] md:h-[440px] w-32" />
+            <BottleSlot rotate={8} className="absolute -right-2 md:-right-4 -bottom-10 h-[230px] md:h-[440px] w-28 md:w-32" />
           </div>
           <div>
             <p className="eyebrow !text-[#f3cf75]">One oil · two products</p>
             <h2 className="mt-4 font-display text-3xl sm:text-4xl md:text-5xl font-bold uppercase tracking-tight leading-[1.1]">
               If we trust it in our food, you can trust it on your hair.
             </h2>
-            <p className="mt-6 text-cream/80 leading-relaxed text-lg">
+            <p className="mt-4 text-cream/80 leading-relaxed text-base md:mt-6 md:text-lg">
               Chonions onion crisps are made with our own homemade onion and mustard oil. This bottle holds exactly
               that same oil — nothing swapped, nothing diluted. The ingredients that make Chonions irresistibly
               crunchy are the ones that have nourished hair in Pakistani homes for generations.
             </p>
-            <p className="mt-4 text-cream/80 leading-relaxed">
+            <p className="mt-4 hidden text-cream/80 leading-relaxed md:block">
               Onion and mustard are the organic match: mustard oil carries warmth and nourishment, onion essence adds
               its strengthening goodness.
             </p>
-            <a href={chonionsSiteUrl} className="mt-8 inline-flex items-center gap-2 text-gold font-semibold underline underline-offset-4 hover:text-cream">
+            <a href={chonionsSiteUrl} className="mt-5 inline-flex items-center gap-2 text-gold md:mt-8 font-semibold underline underline-offset-4 hover:text-cream">
               Discover Chonions onion crisps ↗
             </a>
           </div>
@@ -149,17 +149,17 @@ export default function Home() {
       </section>
 
       {/* ───────── 3 · SEED TO OIL (bottle right) ───────── */}
-      <section className="mx-auto max-w-6xl px-5 py-20 md:py-32 grid md:grid-cols-[1.4fr_1fr] gap-10 md:gap-16 items-center">
+      <section className="mx-auto max-w-6xl px-5 py-12 md:py-32 grid md:grid-cols-[1.4fr_1fr] gap-10 md:gap-16 items-center">
         <div>
           <p className="eyebrow">Homemade, start to finish</p>
           <h2 className="section-title mt-4">From mustard seed till mustard oil.</h2>
-          <p className="mt-5 text-ink/70 text-lg leading-relaxed">
+          <p className="mt-4 text-ink/70 text-base leading-relaxed md:mt-5 md:text-lg">
             We don&apos;t buy oil and relabel it. Every bottle is made by us, at home, the same way we make it for
             Chonions.
           </p>
-          <ol className="mt-10 border-b border-plum/20">
+          <ol className="mt-6 border-b border-plum/20 md:mt-10">
             {journey.map((j) => (
-              <li key={j.step} className="grid grid-cols-[4.25rem_1fr] sm:grid-cols-[5.5rem_1fr] items-baseline gap-x-3 border-t border-plum/20 py-6">
+              <li key={j.step} className="grid grid-cols-[4.25rem_1fr] sm:grid-cols-[5.5rem_1fr] items-baseline gap-x-3 border-t border-plum/20 py-4 md:py-6">
                 <span className="font-display text-4xl sm:text-5xl font-medium leading-none tabular-nums text-gold-deep">{j.step}</span>
                 <div>
                   <h3 className="font-display text-xl font-semibold text-plum">{j.title}</h3>
@@ -169,12 +169,12 @@ export default function Home() {
             ))}
           </ol>
         </div>
-        <BottleSlot rotate={-10} glow="plum" className="h-[340px] md:h-[520px] w-full" />
+        <BottleSlot rotate={-10} glow="plum" className="h-[230px] md:h-[520px] w-full" />
       </section>
 
       {/* ───────── FIXED BACKGROUND: boxes scroll over a still image ───────── */}
       <FixedBackdrop video="oil">
-        <div className="mx-auto max-w-6xl px-5 py-[30vh] flex flex-col gap-[38vh]">
+        <div className="mx-auto max-w-6xl px-5 py-[18vh] md:py-[30vh] flex flex-col gap-[24vh] md:gap-[38vh]">
           {trustBoxes.map((b, i) => (
             <div
               key={b.title}
@@ -207,17 +207,17 @@ export default function Home() {
 
       {/* ───────── 4 · BENEFITS (bottle left) ───────── */}
       <section id="benefits" className="bg-sand">
-        <div className="mx-auto max-w-6xl px-5 py-20 md:py-32 grid md:grid-cols-[1fr_1.5fr] gap-10 md:gap-16 items-center">
-          <BottleSlot rotate={12} anim="left" className="order-2 md:order-1 h-[340px] md:h-[540px] w-full" />
+        <div className="mx-auto max-w-6xl px-5 py-12 md:py-32 grid md:grid-cols-[1fr_1.5fr] gap-10 md:gap-16 items-center">
+          <BottleSlot rotate={12} anim="left" className="order-2 md:order-1 h-[230px] md:h-[540px] w-full" />
           <div className="order-1 md:order-2">
             <p className="eyebrow">For hair health &amp; strength</p>
             <h2 className="section-title mt-4">What a regular oiling does.</h2>
-            <p className="mt-5 text-ink/70 text-lg leading-relaxed">
+            <p className="mt-4 text-ink/70 text-base leading-relaxed md:mt-5 md:text-lg">
               The traditional champi, made with oil you can trust. Results build with regular use.
             </p>
-            <dl className="mt-10 divide-y divide-plum/20 border-y border-plum/20">
+            <dl className="mt-6 divide-y md:mt-10 divide-plum/20 border-y border-plum/20">
               {benefits.map((b) => (
-                <div key={b.title} className="grid gap-1.5 py-6 sm:grid-cols-[11rem_1fr] sm:gap-8">
+                <div key={b.title} className="grid gap-1 py-4 md:py-6 sm:grid-cols-[11rem_1fr] sm:gap-8">
                   <dt className="font-display text-lg font-semibold leading-snug text-plum">{b.title}</dt>
                   <dd className="text-sm text-ink/70 leading-relaxed">{b.text}</dd>
                 </div>
@@ -229,18 +229,18 @@ export default function Home() {
       </section>
 
       {/* ───────── 5 · INGREDIENTS (bottle centre, between the two) ───────── */}
-      <section className="mx-auto max-w-6xl px-5 py-20 md:py-32">
+      <section className="mx-auto max-w-6xl px-5 py-12 md:py-32">
         <div className="text-center max-w-2xl mx-auto">
           <p className="eyebrow">What&apos;s inside</p>
           <h2 className="section-title mt-4">Two ingredients. Fully natural.</h2>
         </div>
-        <div className="mt-12 grid md:grid-cols-[1fr_auto_1fr] gap-6 md:gap-10 items-center">
+        <div className="mt-8 grid md:mt-12 md:grid-cols-[1fr_auto_1fr] gap-4 md:gap-10 items-center">
           <Ingredient
             label="The base"
             name="Mustard oil"
             text="Pressed from mustard seed. Warming and rich, the base of every traditional hair oiling."
           />
-          <BottleSlot rotate={0} anim="pop" className="h-[320px] md:h-[460px] w-full md:w-48" />
+          <BottleSlot rotate={0} anim="pop" className="h-[230px] md:h-[460px] w-full md:w-48" />
           <Ingredient
             label="The infusion"
             side="right"
@@ -252,7 +252,7 @@ export default function Home() {
 
       {/* ───────── IN MOTION: field-to-bottle film (portrait) ───────── */}
       <section className="bg-cream border-t border-plum/10">
-        <div className="mx-auto max-w-6xl px-5 py-20 md:py-28 grid md:grid-cols-[1fr_340px] gap-12 md:gap-24 items-center">
+        <div className="mx-auto max-w-6xl px-5 py-12 md:py-28 grid md:grid-cols-[1fr_340px] gap-8 md:gap-24 items-center">
           <div>
             <p className="eyebrow">The organic match</p>
             <h2 className="section-title mt-4">Onion &amp; mustard, in one bottle.</h2>
@@ -260,9 +260,9 @@ export default function Home() {
               From mustard seed till mustard oil — homemade, fully natural, and made with organic onion and mustard.
               The same oil that goes into Chonions, bottled for your hair.
             </p>
-            <ul className="mt-8 max-w-md divide-y divide-plum/20 border-y border-plum/20">
+            <ul className="mt-5 max-w-md divide-y md:mt-8 divide-plum/20 border-y border-plum/20">
               {["Homemade in small batches", "Fully natural, organic onion & mustard", "Same oil as Chonions crisps"].map((t, i) => (
-                <li key={t} className="flex items-baseline gap-4 py-4">
+                <li key={t} className="flex items-baseline gap-4 py-3 md:py-4">
                   <span className="font-display text-sm font-semibold tabular-nums text-gold-deep">0{i + 1}</span>
                   <span className="font-display text-lg font-semibold text-plum">{t}</span>
                 </li>
@@ -270,7 +270,7 @@ export default function Home() {
             </ul>
             <SimpleAddButton label={`Add to cart · ${formatPKR(product.price)}`} className="btn-primary mt-8" />
           </div>
-          <figure className="relative mx-auto aspect-[9/16] w-full max-w-[340px] overflow-hidden rounded-[3px] bg-plum-deep shadow-[0_40px_70px_-35px_rgba(58,21,52,0.7)]">
+          <figure className="relative mx-auto aspect-[4/5] w-full max-w-[340px] md:aspect-[9/16] overflow-hidden rounded-[3px] bg-plum-deep shadow-[0_40px_70px_-35px_rgba(58,21,52,0.7)]">
             <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: "url(/videos/story-poster.jpg)" }} aria-hidden />
             <LoopVideo name="story" className="absolute inset-0 h-full w-full object-cover" />
             <span className="pointer-events-none absolute inset-2.5 border border-cream/40" aria-hidden />
@@ -280,30 +280,30 @@ export default function Home() {
 
       {/* ───────── 6 · HOW TO USE (bottle right, tilted like it's pouring) ───────── */}
       <section id="how-to-use" className="bg-plum-deep text-cream leaf-pattern">
-        <div className="mx-auto max-w-6xl px-5 py-20 md:py-32 grid md:grid-cols-[1.5fr_1fr] gap-10 md:gap-16 items-center">
+        <div className="mx-auto max-w-6xl px-5 py-12 md:py-32 grid md:grid-cols-[1.5fr_1fr] gap-10 md:gap-16 items-center">
           <div>
             <p className="eyebrow !text-[#f3cf75]">How to use</p>
             <h2 className="mt-4 font-display text-3xl sm:text-4xl md:text-5xl font-bold uppercase tracking-tight">Your weekly champi.</h2>
-            <ol className="mt-10 grid gap-8 sm:grid-cols-2">
+            <ol className="mt-6 grid grid-cols-2 gap-x-5 gap-y-6 md:mt-10 md:gap-8">
               {howTo.map((h, i) => (
                 <li key={h.title} className="border-t border-gold/40 pt-5">
                   <span className="text-gold text-sm font-semibold">Step {i + 1}</span>
-                  <h3 className="mt-2 font-display text-2xl">{h.title}</h3>
-                  <p className="mt-3 text-cream/75 leading-relaxed text-sm">{h.text}</p>
+                  <h3 className="mt-1.5 font-display text-xl md:mt-2 md:text-2xl">{h.title}</h3>
+                  <p className="mt-2 text-[13px] text-cream/75 leading-relaxed md:mt-3 md:text-sm">{h.text}</p>
                 </li>
               ))}
             </ol>
-            <p className="mt-10 text-sm text-cream/60">
+            <p className="mt-6 text-sm text-cream/60 md:mt-10">
               Patch test before first use. For external use on hair and scalp only. Keep away from eyes.
             </p>
           </div>
-          <BottleSlot rotate={-32} anim="right" className="h-[320px] md:h-[480px] w-full" />
+          <BottleSlot rotate={-32} anim="right" className="h-[230px] md:h-[480px] w-full" />
         </div>
       </section>
 
       {/* ───────── 7 · FAQ (title + bottle left, question cards right) ───────── */}
       <section id="faq" className="bg-sand">
-        <div className="mx-auto max-w-6xl px-5 py-20 md:py-32 grid md:grid-cols-[1fr_1.6fr] gap-10 md:gap-16 items-center">
+        <div className="mx-auto max-w-6xl px-5 py-12 md:py-32 grid md:grid-cols-[1fr_1.6fr] gap-10 md:gap-16 items-center">
           <div className="text-center md:text-left">
             <p className="eyebrow">Questions</p>
             <h2 className="section-title mt-4">Hair oil FAQs</h2>
@@ -311,7 +311,7 @@ export default function Home() {
             <a href={`https://wa.me/${contact.whatsapp}`} className="btn-secondary mt-6">
               Contact us on WhatsApp
             </a>
-            <BottleSlot rotate={-6} glow="plum" anim="rise" className="mt-8 h-[300px] md:h-[380px] w-full" />
+            <BottleSlot rotate={-6} glow="plum" anim="rise" className="mt-6 h-[220px] md:mt-8 md:h-[380px] w-full" />
           </div>
           <div className="divide-y divide-plum/20 border-y border-plum/20">
             {faqs.map((f) => (
@@ -322,9 +322,9 @@ export default function Home() {
       </section>
 
       {/* ───────── 8 · CLOSING STATEMENT: mustard plants grow up as you scroll ───────── */}
-      <section className="relative overflow-hidden pt-24 md:pt-32">
+      <section className="relative overflow-hidden pt-14 md:pt-32">
         <span
-          className="pointer-events-none select-none absolute inset-x-0 top-[38%] text-center font-display font-bold uppercase leading-none tracking-tight text-[19vw] text-gold/15"
+          className="pointer-events-none select-none absolute inset-x-0 text-center font-display font-bold uppercase leading-none tracking-tight text-gold/15 max-md:bottom-[calc(max(46vh,320px)-0.5rem)] max-md:text-[15vw] md:top-[38%] md:text-[19vw]"
           aria-hidden
         >
           Mustard
@@ -332,13 +332,13 @@ export default function Home() {
         <div className="relative mx-auto max-w-3xl px-5 text-center">
           <p className="eyebrow">Sister company by Chonions</p>
           <h2 className="section-title mt-4">Grown as mustard. Made at home. Poured for your hair.</h2>
-          <p className="mt-5 text-ink/70 text-lg leading-relaxed">
+          <p className="mt-4 text-ink/70 text-base leading-relaxed md:mt-5 md:text-lg">
             Homemade and fully natural — the same oil we use in making Chonions, now bottled for hair health and
             strength. Order today and pay cash on delivery.
           </p>
           <SimpleAddButton label={`Add to cart · ${formatPKR(product.price)}`} className="btn-primary mt-8" />
         </div>
-        <MustardField className="mt-12 h-[52vh] min-h-[340px] max-h-[560px]">
+        <MustardField className="mt-12 h-[46vh] min-h-[320px] max-h-[560px] md:mt-12 md:h-[52vh]">
           <BottleSlot rotate={0} glow="none" anim="swing" className="absolute left-1/2 bottom-4 -translate-x-1/2 h-[88%] w-40" />
         </MustardField>
       </section>
